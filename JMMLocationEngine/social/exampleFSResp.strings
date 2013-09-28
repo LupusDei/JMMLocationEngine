@@ -1,0 +1,1598 @@
+/* 
+  exampleFSResp.strings
+  JMMLocationEngine
+
+  Created by Justin Martin on 9/27/13.
+  Copyright (c) 2013 JMM. All rights reserved.
+*/
+
+{
+    meta =     {
+        code = 200;
+    };
+    response =     {
+        confidence = 0;
+        venues =         (
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/building/medical_hospital_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d196941735;
+                name = Hospital;
+                pluralName = Hospitals;
+                primary = 1;
+                shortName = Hospital;
+            }
+            );
+            contact =                 {
+                formattedPhone = "(212) 686-7500";
+                phone = 2126867500;
+                twitter = vanyharbor;
+            };
+            hereNow =                 {
+                count = 1;
+                groups =                     (
+                {
+                    count = 1;
+                    items =                             (
+                    );
+                    name = "Other people here";
+                    type = others;
+                }
+                );
+            };
+            id = 4b8bcda7f964a52027ac32e3;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "423 E 23rd St";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                crossStreet = "at 1st Ave";
+                distance = 88;
+                lat = "40.73670369372157";
+                lng = "-73.97774867454807";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "VA Medical Center";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 4023;
+                tipCount = 6;
+                usersCount = 718;
+            };
+            url = "http://vaww.fwp.v03.med.va.gov/v3about";
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/building/gym_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d176941735;
+                name = Gym;
+                pluralName = Gyms;
+                primary = 1;
+                shortName = Gym;
+            }
+            );
+            contact =                 {
+                formattedPhone = "(212) 447-2020";
+                phone = 2124472020;
+                twitter = nycparks;
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4afdc85af964a520d32a22e3;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "392 Asser Levy Pl";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                crossStreet = "East 23rd Street";
+                distance = 54;
+                lat = "40.73654673140305";
+                lng = "-73.97611296628737";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "Asser Levy Recreation Center";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 1862;
+                tipCount = 12;
+                usersCount = 303;
+            };
+            storeId = "";
+            url = "http://www.nycgovparks.org/facilities/recreationcenters/M164";
+            verified = 1;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/education/residencehall_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d1a3941735;
+                name = "College Residence Hall";
+                pluralName = "College Residence Halls";
+                primary = 1;
+                shortName = "Residence Hall";
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 1;
+                groups =                     (
+                {
+                    count = 1;
+                    items =                             (
+                    );
+                    name = "Other people here";
+                    type = others;
+                }
+                );
+            };
+            id = 4ac4452df964a5208c9e20e3;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "425 E 25th St";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 109;
+                lat = "40.73763663017882";
+                lng = "-73.97615611553192";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "Hunter College Brookdale Campus";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 4373;
+                tipCount = 8;
+                usersCount = 519;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/parks_outdoors/pool_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d15e941735;
+                name = Pool;
+                pluralName = Pools;
+                primary = 1;
+                shortName = Pool;
+            }
+            );
+            contact =                 {
+                formattedPhone = "(212) 447-2020";
+                phone = 2124472020;
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4c4a5f2cc9e4ef3b6370ce10;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "501 Asser Levy Place";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                crossStreet = "23rd Street";
+                distance = 100;
+                lat = "40.73591177580377";
+                lng = "-73.97624497132963";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "Asser Levy Recreation Center - Outdoor Swimming Pool";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 641;
+                tipCount = 1;
+                usersCount = 141;
+            };
+            verified = 1;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/food/default_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d1c4941735;
+                name = Restaurant;
+                pluralName = Restaurants;
+                primary = 1;
+                shortName = Restaurant;
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 522e7c0011d2c5ba58af668f;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 70;
+                lat = "40.736347";
+                lng = "-73.977351";
+                state = NY;
+            };
+            name = "Ch\U00e9z JJ";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 10;
+                tipCount = 0;
+                usersCount = 3;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/building/apartment_";
+                    suffix = ".png";
+                };
+                id = 4d954b06a243a5684965b473;
+                name = "Residential Building (Apartment / Condo)";
+                pluralName = "Residential Buildings (Apartments / Condos)";
+                primary = 1;
+                shortName = Residential;
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 522097ac498edd74c2012d77;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "510 E 20th St";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 22;
+                lat = "40.73660646222211";
+                lng = "-73.97651472048214";
+                postalCode = 10009;
+                state = NY;
+            };
+            name = "Love Dungeon";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 2;
+                tipCount = 0;
+                usersCount = 1;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/building/apartment_";
+                    suffix = ".png";
+                };
+                id = 4d954b06a243a5684965b473;
+                name = "Residential Building (Apartment / Condo)";
+                pluralName = "Residential Buildings (Apartments / Condos)";
+                primary = 1;
+                shortName = Residential;
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4c414960520fa5938281c9ac;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "440 E 23rd St";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                crossStreet = "at Asser Levy Pl.";
+                distance = 100;
+                lat = "40.73621805193768";
+                lng = "-73.97573232650755";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "440 East 23rd St";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 366;
+                tipCount = 1;
+                usersCount = 28;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/nightlife/divebar_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d118941735;
+                name = "Dive Bar";
+                pluralName = "Dive Bars";
+                primary = 1;
+                shortName = "Dive Bar";
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 521e838411d28fe38a02a63e;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 108;
+                lat = "40.73614120483398";
+                lng = "-73.97769927978516";
+                state = NY;
+            };
+            name = "P.A.X. Room";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 18;
+                tipCount = 0;
+                usersCount = 2;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/building/medical_dentist_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d178941735;
+                name = "Dentist's Office";
+                pluralName = "Dentist's Offices";
+                primary = 1;
+                shortName = "Dentist's Office";
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4eafeebe9a521bacdb79c8c7;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "400 E. 24th St";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                crossStreet = "1st Avenue";
+                distance = 80;
+                lat = "40.73733415934674";
+                lng = "-73.97613592369252";
+                state = NY;
+            };
+            name = "NYU College Of Dentistry - Saklad Auditorium";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 433;
+                tipCount = 1;
+                usersCount = 51;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/shops/foodanddrink_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d1f9941735;
+                name = "Food & Drink Shop";
+                pluralName = "Food & Drink Shops";
+                primary = 1;
+                shortName = "Food & Drink";
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4ff3457de4b002d4d1c26886;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "East 23 St";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                crossStreet = "at 1st Ave";
+                distance = 84;
+                lat = "40.73599236211908";
+                lng = "-73.97675577259626";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "Fruit Stand";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 53;
+                tipCount = 1;
+                usersCount = 14;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/shops/daycare_";
+                    suffix = ".png";
+                };
+                id = 4f4532974b9074f6e4fb0104;
+                name = Daycare;
+                pluralName = Daycares;
+                primary = 1;
+                shortName = Daycare;
+            }
+            );
+            contact =                 {
+                formattedPhone = "(212) 951-3435";
+                phone = 2129513435;
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 522de8f211d29afa748df953;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "423 E 23rd St";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 39;
+                lat = "40.736934";
+                lng = "-73.977093";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "Vets Kids/Imagine ELC";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 1;
+                tipCount = 0;
+                usersCount = 1;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/food/streetfood_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d1cb941735;
+                name = "Food Truck";
+                pluralName = "Food Trucks";
+                primary = 1;
+                shortName = "Food Truck";
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 524077d2498e6bfb39dd7ed5;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 93;
+                lat = "40.736555";
+                lng = "-73.977782";
+                state = NY;
+            };
+            name = "Halal Food Cart";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 1;
+                tipCount = 0;
+                usersCount = 1;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/building/apartment_";
+                    suffix = ".png";
+                };
+                id = 4d954b06a243a5684965b473;
+                name = "Residential Building (Apartment / Condo)";
+                pluralName = "Residential Buildings (Apartments / Condos)";
+                primary = 1;
+                shortName = Residential;
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 521126e611d29d168bbf7696;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 37;
+                lat = "40.73663";
+                lng = "-73.97627900000001";
+                state = NY;
+            };
+            name = "385 First Avenue";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 1;
+                tipCount = 0;
+                usersCount = 1;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/building/medical_hospital_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d196941735;
+                name = Hospital;
+                pluralName = Hospitals;
+                primary = 1;
+                shortName = Hospital;
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 51a35a94498e3030c606b33c;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 61;
+                lat = "40.7372482216312";
+                lng = "-73.97638845496849";
+                state = NY;
+            };
+            name = "NoN-Stop OT";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 14;
+                tipCount = 0;
+                usersCount = 1;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/arts_entertainment/artgallery_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d1e2931735;
+                name = "Art Gallery";
+                pluralName = "Art Galleries";
+                primary = 1;
+                shortName = "Art Gallery";
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4eebfc76f790c40a885cae9e;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "27th Street";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                crossStreet = "6th Ave";
+                distance = 28;
+                lat = "40.73674818707406";
+                lng = "-73.97703699968093";
+                postalCode = 10001;
+                state = NY;
+            };
+            name = "Eugena Universe";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 1;
+                tipCount = 0;
+                usersCount = 1;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/building/eventspace_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d171941735;
+                name = "Event Space";
+                pluralName = "Event Spaces";
+                primary = 1;
+                shortName = "Event Space";
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4eeb5558e3000c69e168bbf3;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "421 east 26th street";
+                cc = US;
+                country = "United States";
+                distance = 95;
+                lat = "40.7366723";
+                lng = "-73.9755771";
+                postalCode = 10010;
+            };
+            name = "Department of Health & Mental Hygiene";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 14;
+                tipCount = 0;
+                usersCount = 10;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/building/apartment_";
+                    suffix = ".png";
+                };
+                id = 4d954b06a243a5684965b473;
+                name = "Residential Building (Apartment / Condo)";
+                pluralName = "Residential Buildings (Apartments / Condos)";
+                primary = 1;
+                shortName = Residential;
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 51392ba6e4b0639e006939b9;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "430 e 20th At";
+                cc = US;
+                city = "New York City";
+                country = "United States";
+                distance = 30;
+                lat = "40.736581";
+                lng = "-73.976985";
+                state = NY;
+            };
+            name = "Laundry Room";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 1;
+                tipCount = 0;
+                usersCount = 1;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/nightlife/nightclub_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d11f941735;
+                name = Nightclub;
+                pluralName = Nightclubs;
+                primary = 1;
+                shortName = Nightclub;
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4bc8f528937ca593f0e0a492;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = Brooklyn;
+                country = "United States";
+                distance = 116;
+                lat = "40.7359965";
+                lng = "-73.97574";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "Chez Doris";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 4;
+                tipCount = 0;
+                usersCount = 3;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/education/lab_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d1a5941735;
+                name = "College Lab";
+                pluralName = "College Labs";
+                primary = 1;
+                shortName = Lab;
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4c0dc8825272d13a58ffde5b;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "423 E 23rd St";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                crossStreet = "First Avenue";
+                distance = 32;
+                lat = "40.736969";
+                lng = "-73.97644";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "Genital Development  Lab";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 21;
+                tipCount = 1;
+                usersCount = 7;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/shops/apparel_women_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d108951735;
+                name = "Women's Store";
+                pluralName = "Women's Stores";
+                primary = 1;
+                shortName = "Women's Store";
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 51b79f61498ee89a9a13dfc4;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 58;
+                lat = "40.736344";
+                lng = "-73.97714000000001";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "Bolton's E 23 St";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 2;
+                tipCount = 0;
+                usersCount = 1;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4eec180f30f824cfc369b1b6;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 35;
+                lat = "40.736605";
+                lng = "-73.97632400000001";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "Hess Wess & Kells";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 0;
+                tipCount = 0;
+                usersCount = 0;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/parks_outdoors/dogrun_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d1e5941735;
+                name = "Dog Run";
+                pluralName = "Dog Runs";
+                primary = 1;
+                shortName = "Dog Run";
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 51958a12498e00c70d023593;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 47;
+                lat = "40.73633126828368";
+                lng = "-73.97658933188308";
+                state = NY;
+            };
+            name = "Union Square Park Dog Run";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 2;
+                tipCount = 0;
+                usersCount = 2;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/building/medical_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d1b3941735;
+                name = "Medical School";
+                pluralName = "Medical Schools";
+                primary = 1;
+                shortName = "Medical School";
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4e6f5e4dd4c06eaf9c255b99;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                country = "United States";
+                distance = 124;
+                lat = "40.737599";
+                lng = "-73.97573800000001";
+                state = NY;
+            };
+            name = "HBSON: Hunter - Bellevue School Of Nursing";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 30;
+                tipCount = 0;
+                usersCount = 8;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/building/apartment_";
+                    suffix = ".png";
+                };
+                id = 4d954b06a243a5684965b473;
+                name = "Residential Building (Apartment / Condo)";
+                pluralName = "Residential Buildings (Apartments / Condos)";
+                primary = 1;
+                shortName = Residential;
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 50cd1038e4b09d953e6269ea;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 147;
+                lat = "40.73567192988995";
+                lng = "-73.97567677506879";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "K And A's";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 3;
+                tipCount = 0;
+                usersCount = 2;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/parks_outdoors/river_";
+                    suffix = ".png";
+                };
+                id = 4eb1d4dd4b900d56c88a45fd;
+                name = River;
+                pluralName = Rivers;
+                primary = 1;
+                shortName = River;
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4fe5ce50e4b04318c3d6ced2;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 85;
+                lat = "40.73602311645578";
+                lng = "-73.97638271562498";
+                postalCode = 10036;
+                state = NY;
+            };
+            name = "new york sightseeing Boat";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 6;
+                tipCount = 0;
+                usersCount = 3;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4c3b91715810a593cce1ba3c;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 51;
+                lat = "40.736715";
+                lng = "-73.977306";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "Babette Haggerty's Dog Training";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 6;
+                tipCount = 0;
+                usersCount = 3;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/parks_outdoors/playground_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d1e7941735;
+                name = Playground;
+                pluralName = Playgrounds;
+                primary = 1;
+                shortName = Playground;
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4c055c0ef56c2d7f9f891f66;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                distance = 70;
+                lat = "40.73675587359163";
+                lng = "-73.97586043464979";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "Asser Levy Playgroung";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 105;
+                tipCount = 1;
+                usersCount = 50;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/shops/giftshop_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d128951735;
+                name = "Gift Shop";
+                pluralName = "Gift Shops";
+                primary = 1;
+                shortName = "Gift Shop";
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4d3e07566b3d236ad0e46e64;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "462 1st Ave";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                crossStreet = "btwn 26th St. & 27th St.";
+                distance = 50;
+                lat = "40.73658374493223";
+                lng = "-73.97614166304341";
+                postalCode = 10016;
+                state = NY;
+            };
+            name = "Bellevue Gift Shop";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 94;
+                tipCount = 1;
+                usersCount = 32;
+            };
+            verified = 1;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/arts_entertainment/stadium_tennis_";
+                    suffix = ".png";
+                };
+                id = 4e39a956bd410d7aed40cbc3;
+                name = "Tennis Court";
+                pluralName = "Tennis Courts";
+                primary = 1;
+                shortName = "Tennis Court";
+            }
+            );
+            contact =                 {
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 51cb7bc0498eaace9adbd4c5;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                cc = US;
+                city = "New York";
+                country = "United States";
+                crossStreet = "25th Street and First ave";
+                distance = 117;
+                lat = "40.73776069147813";
+                lng = "-73.97629662545195";
+                state = NY;
+            };
+            name = "Hunter College Brookdale Campus Tennis Courts";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 12;
+                tipCount = 1;
+                usersCount = 7;
+            };
+            verified = 0;
+        },
+        {
+            categories =                 (
+            {
+                icon =                         {
+                    prefix = "https://foursquare.com/img/categories_v2/building/default_";
+                    suffix = ".png";
+                };
+                id = 4bf58dd8d48988d124941735;
+                name = Office;
+                pluralName = Offices;
+                primary = 1;
+                shortName = Office;
+            }
+            );
+            contact =                 {
+                formattedPhone = "(212) 689-2991";
+                phone = 2126892991;
+            };
+            hereNow =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            id = 4b0c27ccf964a520023823e3;
+            likes =                 {
+                count = 0;
+                groups =                     (
+                );
+            };
+            location =                 {
+                address = "423 E 23rd St";
+                cc = US;
+                city = "New York";
+                country = "United States";
+                crossStreet = "at 1st Ave.";
+                distance = 56;
+                lat = "40.73659200673097";
+                lng = "-73.9773416519165";
+                postalCode = 10010;
+                state = NY;
+            };
+            name = "IBM Metro Employees Fed CU";
+            referralId = "v-1380315794";
+            restricted = 1;
+            specials =                 {
+                count = 0;
+                items =                     (
+                );
+            };
+            stats =                 {
+                checkinsCount = 2;
+                tipCount = 0;
+                usersCount = 1;
+            };
+            verified = 0;
+        }
+        );
+    };
+}
