@@ -38,7 +38,7 @@
         NSLog(@"JMMVC -- placemark:%@", place);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setLabelsWithLoc:place.location];
-            [self.placeLabel setText:[[place addressDictionary] objectForKey:@"FormattedAddressLines"]];
+            [self.placeLabel setText:[[[place addressDictionary] objectForKey:@"FormattedAddressLines"] objectAtIndex:0]];
         });
     } onFailure:^(NSInteger failCode) {
         
