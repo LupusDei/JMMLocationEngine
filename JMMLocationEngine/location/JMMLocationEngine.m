@@ -1,6 +1,5 @@
 //
 //  LocationEngine.m
-//  Brabble-iOSClient
 //
 //  Created by Justin Martin on 1/25/13.
 //
