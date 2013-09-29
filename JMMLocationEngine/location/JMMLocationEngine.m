@@ -40,9 +40,7 @@ static JMMLocationEngine *currentEngineInstance = nil;
 
 +(void) getBallParkLocationOnSuccess:(LESuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock {
     if ([CLLocationManager locationServicesEnabled]) {
-        NSLog(@"LocationEngine -- getBallParkLocation -- locationServiceEnabled");
         JMMLocationEngine *le = [self current];
-        NSLog(@"LocationEngine -- getBallParkLocation -- locationService AUTHORIZED");
         le.successBlock = successBlock;
         le.failureBlock = failureBlock;
         [le scheduleTimeout];
@@ -94,7 +92,6 @@ static JMMLocationEngine *currentEngineInstance = nil;
         NSDictionary *jsonResp = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:&error];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
-                NSLog(@"LocationEngine getFoursquareVenues -- ERROR:%@", error);
                 if (failBlock)
                     failBlock(error);
             }
@@ -115,7 +112,6 @@ static JMMLocationEngine *currentEngineInstance = nil;
             }
             
         } onFailure:^(NSError *error) {
-            NSLog(@"LocationEngine  -- FAILED TO GET FS venues %@",error);
             if (failureBlock)
                 failureBlock(TimeOutFailure);
         }];
@@ -127,19 +123,15 @@ static JMMLocationEngine *currentEngineInstance = nil;
 -(void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     switch (status) {
         case kCLAuthorizationStatusAuthorized:
-            NSLog(@"LEngine --- sAUTHORIZED");
             self.locatorIsAuthorized = YES;
             break;
         case kCLAuthorizationStatusDenied:
-            NSLog(@"LEngine --- sDENIED");
             self.locatorIsAuthorized = NO;
             break;
         case kCLAuthorizationStatusNotDetermined:
-            NSLog(@"LEngine --- sNOTDETERMINED");
             self.locatorIsAuthorized = NO;
             break;
         case kCLAuthorizationStatusRestricted:
-            NSLog(@"LEngine --- sRESTRICTED");
             self.locatorIsAuthorized = NO;
             break;
         default:
@@ -161,7 +153,6 @@ static JMMLocationEngine *currentEngineInstance = nil;
 }
 
 -(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    NSLog(@"LocationManager didFailWithError: %@", error);
     [self stopUpdating];
     if (self.failureBlock) {
         self.failureBlock(AuthorizationFailure);   
@@ -174,7 +165,6 @@ static JMMLocationEngine *currentEngineInstance = nil;
     self.lastLocation = self.currentLocation;
     self.currentLocation = [locations lastObject];
     if ([self isInvalidLocation]) {
-        NSLog(@"Invalid Location!!");
         self.currentLocation = self.lastLocation;
     }
     else {
@@ -196,7 +186,6 @@ static JMMLocationEngine *currentEngineInstance = nil;
 
 -(void) timesUp {
     if (_timerIsValid) {
-        NSLog(@"LocationEngine -- TIMEOUT");
         self.failureBlock(TimeOutFailure);
         [self stopUpdating];
         self.failureBlock = nil;

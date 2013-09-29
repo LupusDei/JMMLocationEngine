@@ -25,17 +25,14 @@
 }
 - (IBAction)getLocationPressed:(id)sender {
     [JMMLocationEngine getBallParkLocationOnSuccess:^(CLLocation *loc) {
-        NSLog(@"JMMVC -- ballpark:%@", loc);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setLabelsWithLoc:loc];
         });
     } onFailure:^(NSInteger failCode) {
-        NSLog(@"JMMVC -- failed to get ballpark location");
     }];
 }
 - (IBAction)getPlacemarksPressed:(id)sender {
     [JMMLocationEngine getPlacemarkLocationOnSuccess:^(CLPlacemark *place) {
-        NSLog(@"JMMVC -- placemark:%@", place);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setLabelsWithLoc:place.location];
             [self.placeLabel setText:[[[place addressDictionary] objectForKey:@"FormattedAddressLines"] objectAtIndex:0]];
