@@ -13,7 +13,7 @@
 
 @interface JMMFoursquareAPIHelper : NSObject
 
-+(NSString *) buildVenuesExploreRequestWithLat:(float)lat long:(float)ln;
-+(NSString *) buildVenuesSearchRequestWithLat:(float)lat long:(float)ln;
++(NSString *) buildVenuesExploreRequestWithLat:(float)lat lng:(float)ln;
++(NSString *) buildVenuesSearchRequestWithLat:(float)lat lng:(float)ln andSearchString:(NSString *)search;
 
 @end

@@ -82,13 +82,20 @@ static JMMLocationEngine *currentEngineInstance = nil;
 //}
 }
 
-+(void) getFoursquareVenuesForLat:(float)lat andLong:(float)lng onSuccess:(void (^)(NSDictionary *venuesInfo))successBlock onFailure:(void (^)(NSError *))failBlock {
-    NSString *url = [JMMFoursquareAPIHelper buildVenuesSearchRequestWithLat:lat long:lng];
++(void) getFoursquareVenuesForLat:(float)lat lng:(float)lng andSearchString:(NSString *)search onSuccess:(void (^)(NSDictionary *venuesInfo))successBlock onFailure:(void (^)(NSError *))failBlock {
+    NSString *url = [JMMFoursquareAPIHelper buildVenuesSearchRequestWithLat:lat lng:lng andSearchString:search];
     dispatch_queue_t fsQueue = dispatch_queue_create("fsQueue", nil);
     dispatch_async(fsQueue, ^{
         NSError *error;
         NSData *result = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-        NSDictionary *jsonResp = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:&error];
+        NSDictionary *jsonResp;
+        if (result) {
+            jsonResp = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:&error];
+        }
+        else {
+            error = [NSError errorWithDomain:@"com.jmm.JMMLocationEngine" code:1 userInfo:@{@"error":@"Empty response"}];
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
                 if (failBlock)
@@ -102,9 +109,9 @@ static JMMLocationEngine *currentEngineInstance = nil;
     });
 }
 
-+(void) getFoursquareVenuesNearbyOnSuccess:(LEFoursquareSuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock {
++(void) getFoursquareVenuesNearbyWithSearchString:(NSString *)search onSuccess:(LEFoursquareSuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock {
     [self getBallParkLocationOnSuccess:^(CLLocation *loc) {
-        [self getFoursquareVenuesForLat:loc.coordinate.latitude andLong:loc.coordinate.longitude onSuccess:^(NSDictionary *venues) {
+        [self getFoursquareVenuesForLat:loc.coordinate.latitude lng:loc.coordinate.longitude andSearchString:search onSuccess:^(NSDictionary *venues) {
             NSArray *vens = [FSConverter convertToObjects:[venues objectForKey:@"venues"]];
             if (successBlock) {
                 successBlock(vens);
@@ -117,6 +124,10 @@ static JMMLocationEngine *currentEngineInstance = nil;
     } onFailure:^(NSInteger failCode) {
         
     }];
+}
+
++(void) getFoursquareVenuesNearbyOnSuccess:(LEFoursquareSuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock {
+	[self getFoursquareVenuesNearbyWithSearchString:@"" onSuccess:successBlock onFailure:failureBlock];
 }
 
 -(void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {

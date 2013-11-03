@@ -21,6 +21,7 @@
     self.venueTableView.dataSource = self;
     self.venueTableView.delegate = self;
     self.venues = @[];
+    self.searchBar.delegate = self;
     [self getLocationPressed:self];
 }
 - (IBAction)getLocationPressed:(id)sender {
@@ -70,6 +71,17 @@
     [cell.textLabel setText:venue.name];
     [cell.detailTextLabel setText:[venue.location.distance stringValue]];
     return cell;
+}
+
+-(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [JMMLocationEngine getFoursquareVenuesNearbyWithSearchString:searchText onSuccess:^(NSArray *venues) {
+        self.venues = venues;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.venueTableView reloadData];
+        });
+    } onFailure:^(NSInteger failCode) {
+        
+    }];
 }
 
 @end

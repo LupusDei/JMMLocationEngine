@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JMMViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface JMMViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *venueTableView;
 @property (weak, nonatomic) IBOutlet UILabel *latLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lngLabel;
 @property (weak, nonatomic) IBOutlet UILabel *accuracyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeLabel;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

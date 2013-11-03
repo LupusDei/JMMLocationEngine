@@ -27,12 +27,14 @@
     return url;
 }
 
-+(NSString *) buildVenuesExploreRequestWithLat:(float)lat long:(float)ln {
++(NSString *) buildVenuesExploreRequestWithLat:(float)lat lng:(float)ln {
     return [self buildFoursquareURLWithPath:FoursquareVenuesExploreURL andParams:@{@"ll":[NSString stringWithFormat:@"%f,%f", lat, ln]}];
 }
 
-+(NSString *) buildVenuesSearchRequestWithLat:(float)lat long:(float)ln {
-    return [self buildFoursquareURLWithPath:FoursquareVenuesSearchURL andParams:@{@"ll":[NSString stringWithFormat:@"%f,%f", lat, ln]}];
++(NSString *) buildVenuesSearchRequestWithLat:(float)lat lng:(float)ln andSearchString:(NSString *)search {
+    search = search ? search : @"";
+    search = [search stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return [self buildFoursquareURLWithPath:FoursquareVenuesSearchURL andParams:@{@"ll":[NSString stringWithFormat:@"%f,%f", lat, ln], @"query":search}];
 }
 
 @end
