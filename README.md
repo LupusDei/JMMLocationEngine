@@ -94,10 +94,8 @@ Added Google Places API Methods including
                                               NSLog(@"%@",places);
                                           }
                                           onFailure:^(NSInteger failCode) {
-                                              
                                           }];
                                           
-    
     
   Example 3 :     
     
@@ -110,7 +108,6 @@ Added Google Places API Methods including
                                               NSLog(@"%@",places);
                                           }
                                           onFailure:^(NSInteger failCode) {
-                                              
                                           }];
                                           
                                           
