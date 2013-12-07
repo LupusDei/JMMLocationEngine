@@ -78,6 +78,7 @@ Added Google Places API Methods including
   //https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&sensor=false&key=AddYourOwnKeyHere
 
   Example 1 : 
+        
         [JMMLocationEngine getNearbyGooglePlaceInRadius:500
                                           OnSuccess:^(NSArray *places){
                                               NSLog(@"%@",places);
@@ -87,6 +88,7 @@ Added Google Places API Methods including
                                           }];
     
   Example 2 :     
+    
     [JMMLocationEngine getNearbyGooglePlaceInRadius:500 WithName:@"Apple"
                                           OnSuccess:^(NSArray *places){
                                               NSLog(@"%@",places);
@@ -97,6 +99,7 @@ Added Google Places API Methods including
     
     
   Example 3 :     
+    
     [JMMLocationEngine getNearbyGooglePlaceInRadius:500
                                            WithName:@""
                                          InCategory:[NSArray arrayWithObjects:kGooglePlacesTypeRestaurant,
@@ -110,6 +113,7 @@ Added Google Places API Methods including
                                           }];
                                           
   Example 4 : 
+      
       [JMMLocationEngine getNearbyGooglePlaceInRadius:500
                                        WithLatitude:37.787357
                                        andLongitude:-122.408226
