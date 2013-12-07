@@ -89,7 +89,7 @@ Added Google Places API Methods including
     
   Example 2 :     
     
-    [JMMLocationEngine getNearbyGooglePlaceInRadius:500 WithName:@"Apple"
+      [JMMLocationEngine getNearbyGooglePlaceInRadius:500 WithName:@"Apple"
                                           OnSuccess:^(NSArray *places){
                                               NSLog(@"%@",places);
                                           }
@@ -99,7 +99,7 @@ Added Google Places API Methods including
     
   Example 3 :     
     
-    [JMMLocationEngine getNearbyGooglePlaceInRadius:500
+      [JMMLocationEngine getNearbyGooglePlaceInRadius:500
                                            WithName:@""
                                          InCategory:[NSArray arrayWithObjects:kGooglePlacesTypeRestaurant,
                                                      kGooglePlacesTypeShoppingMall,
