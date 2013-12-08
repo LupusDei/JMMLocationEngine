@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		625DD6851854F6D800ACDA04 /* JMMGooglePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 625DD6841854F6D800ACDA04 /* JMMGooglePlace.m */; };
 		6275982C17F4E14900C952E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6275982B17F4E14900C952E4 /* Foundation.framework */; };
 		6275982E17F4E14900C952E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6275982D17F4E14900C952E4 /* CoreGraphics.framework */; };
 		6275983017F4E14900C952E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6275982F17F4E14900C952E4 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		625DD6831854F6D800ACDA04 /* JMMGooglePlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMMGooglePlace.h; path = social/JMMGooglePlace.h; sourceTree = "<group>"; };
+		625DD6841854F6D800ACDA04 /* JMMGooglePlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMMGooglePlace.m; path = social/JMMGooglePlace.m; sourceTree = "<group>"; };
 		6275982817F4E14900C952E4 /* JMMLocationEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMMLocationEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6275982B17F4E14900C952E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6275982D17F4E14900C952E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,10 +67,10 @@
 		6275986517F4E16500C952E4 /* JMMLocationEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMMLocationEngine.m; sourceTree = "<group>"; };
 		6275986817F4E16F00C952E4 /* JMMFoursquareAPIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMMFoursquareAPIHelper.h; sourceTree = "<group>"; };
 		6275986917F4E16F00C952E4 /* JMMFoursquareAPIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMMFoursquareAPIHelper.m; sourceTree = "<group>"; };
-		6275986E17F4E18700C952E4 /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
-		6275986F17F4E18700C952E4 /* FSConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSConverter.m; sourceTree = "<group>"; };
-		6275987017F4E18700C952E4 /* FSVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVenue.h; sourceTree = "<group>"; };
-		6275987117F4E18700C952E4 /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenue.m; sourceTree = "<group>"; };
+		6275986E17F4E18700C952E4 /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSConverter.h; path = social/FSConverter.h; sourceTree = "<group>"; };
+		6275986F17F4E18700C952E4 /* FSConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSConverter.m; path = social/FSConverter.m; sourceTree = "<group>"; };
+		6275987017F4E18700C952E4 /* FSVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSVenue.h; path = social/FSVenue.h; sourceTree = "<group>"; };
+		6275987117F4E18700C952E4 /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSVenue.m; path = social/FSVenue.m; sourceTree = "<group>"; };
 		62D4227E17F655FC003B772D /* exampleFSResp.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = exampleFSResp.strings; sourceTree = "<group>"; };
 		999B5C5518544BC200A3A3AD /* O16GooglePlacesAPIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = O16GooglePlacesAPIHelper.h; sourceTree = "<group>"; };
 		999B5C5618544BC200A3A3AD /* O16GooglePlacesAPIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = O16GooglePlacesAPIHelper.m; sourceTree = "<group>"; };
@@ -98,6 +101,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		625DD6821854F6A100ACDA04 /* LocationModels */ = {
+			isa = PBXGroup;
+			children = (
+				6275986E17F4E18700C952E4 /* FSConverter.h */,
+				6275986F17F4E18700C952E4 /* FSConverter.m */,
+				6275987017F4E18700C952E4 /* FSVenue.h */,
+				6275987117F4E18700C952E4 /* FSVenue.m */,
+				625DD6831854F6D800ACDA04 /* JMMGooglePlace.h */,
+				625DD6841854F6D800ACDA04 /* JMMGooglePlace.m */,
+			);
+			name = LocationModels;
+			sourceTree = "<group>";
+		};
 		6275981F17F4E14900C952E4 = {
 			isa = PBXGroup;
 			children = (
@@ -131,10 +147,11 @@
 		6275983117F4E14900C952E4 /* JMMLocationEngine */ = {
 			isa = PBXGroup;
 			children = (
+				625DD6821854F6A100ACDA04 /* LocationModels */,
 				6275983A17F4E14900C952E4 /* JMMAppDelegate.h */,
 				6275983B17F4E14900C952E4 /* JMMAppDelegate.m */,
-				6275986717F4E16F00C952E4 /* social */,
-				6275986317F4E16500C952E4 /* location */,
+				6275986717F4E16F00C952E4 /* LocationHelpers */,
+				6275986317F4E16500C952E4 /* LocationEngine */,
 				6275983D17F4E14900C952E4 /* Main_iPhone.storyboard */,
 				6275984017F4E14900C952E4 /* Main_iPad.storyboard */,
 				6275984317F4E14900C952E4 /* JMMViewController.h */,
@@ -174,22 +191,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6275986317F4E16500C952E4 /* location */ = {
+		6275986317F4E16500C952E4 /* LocationEngine */ = {
 			isa = PBXGroup;
 			children = (
 				6275986417F4E16500C952E4 /* JMMLocationEngine.h */,
 				6275986517F4E16500C952E4 /* JMMLocationEngine.m */,
 			);
+			name = LocationEngine;
 			path = location;
 			sourceTree = "<group>";
 		};
-		6275986717F4E16F00C952E4 /* social */ = {
+		6275986717F4E16F00C952E4 /* LocationHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				6275986E17F4E18700C952E4 /* FSConverter.h */,
-				6275986F17F4E18700C952E4 /* FSConverter.m */,
-				6275987017F4E18700C952E4 /* FSVenue.h */,
-				6275987117F4E18700C952E4 /* FSVenue.m */,
 				6275986817F4E16F00C952E4 /* JMMFoursquareAPIHelper.h */,
 				6275986917F4E16F00C952E4 /* JMMFoursquareAPIHelper.m */,
 				999B5C5818544C8700A3A3AD /* GooglePlacesTypes.h */,
@@ -197,6 +211,7 @@
 				999B5C5618544BC200A3A3AD /* O16GooglePlacesAPIHelper.m */,
 				62D4227E17F655FC003B772D /* exampleFSResp.strings */,
 			);
+			name = LocationHelpers;
 			path = social;
 			sourceTree = "<group>";
 		};
@@ -303,6 +318,7 @@
 				6275987217F4E18700C952E4 /* FSConverter.m in Sources */,
 				999B5C5718544BC200A3A3AD /* O16GooglePlacesAPIHelper.m in Sources */,
 				6275983817F4E14900C952E4 /* main.m in Sources */,
+				625DD6851854F6D800ACDA04 /* JMMGooglePlace.m in Sources */,
 				6275983C17F4E14900C952E4 /* JMMAppDelegate.m in Sources */,
 				6275986617F4E16500C952E4 /* JMMLocationEngine.m in Sources */,
 				6275984517F4E14900C952E4 /* JMMViewController.m in Sources */,

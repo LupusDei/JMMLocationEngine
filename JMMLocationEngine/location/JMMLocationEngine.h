@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import "FSVenue.h"
-#import "O16GooglePlacesAPIHelper.h"
+#import "JMMGooglePlace.h"
 
 #define TimeOutFailure 0
 #define AuthorizationFailure 1
@@ -39,12 +39,15 @@ typedef void (^LEGooglePlacesFailureBlock)(NSError *error);
 +(void) getFoursquareVenuesNearbyOnSuccess:(LEFoursquareSuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock;
 +(void) getFoursquareVenuesNearbyWithSearchString:(NSString *)search onSuccess:(LEFoursquareSuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock;
 
-+(void) getGooglePlaceAutoCompleteWithString:(NSString*)typedChars OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
-+(void) searchGooglePlaceWithString:(NSString*)searchQuery OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
++(void) getGooglePlacesNearbyOnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
++(void) getGooglePlacesWithString:(NSString*)searchQuery onSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
++(void) getGooglePlaceAutoCompleteWithString:(NSString*)typedChars onSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
 
-+(void) getNearbyGooglePlaceInRadius:(float)radius WithLatitude:(float)lat andLongitude:(float)lng WithName:(NSString*)name InCategory:(NSArray*)categories OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
-+(void) getNearbyGooglePlaceInRadius:(float)radius OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
-+(void) getNearbyGooglePlaceInRadius:(float)radius WithName:(NSString*)name OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
-+(void) getNearbyGooglePlaceInRadius:(float)radius WithName:(NSString*)name InCategory:(NSArray*)categories OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
+/*******  Other Helpers.   Radius is in meters *********/
++(void) getNearbyGooglePlacesInRadius:(float)radius onSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
++(void) getNearbyGooglePlacesInRadius:(float)radius withName:(NSString*)name onSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
++(void) getNearbyGooglePlacesInRadius:(float)radius withName:(NSString*)name inCategory:(NSArray*)categories onSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
++(void) getNearbyGooglePlacesInRadius:(float)radius withLat:(float)lat lng:(float)lng name:(NSString*)name inCategory:(NSArray*)categories onSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
+
 
 @end

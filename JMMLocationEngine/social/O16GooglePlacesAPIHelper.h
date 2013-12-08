@@ -15,6 +15,6 @@
 
 +(NSString *) buildPlaceAutoCompleteWithTypedCharacter:(NSString*)characters;
 +(NSString *) buildPlaceSearchRequestWithSearchString:(NSString*)searchString;
-+(NSString *) buildNearbyPlaceSearchRequestWithSearchString:(NSString*)searchString andLatitude:(float)lat andlongitude:(float)lan withinRadius:(float)radius inCategorories:(NSArray*)categories;
++(NSString *) buildNearbyPlaceSearchRequestWithSearchString:(NSString*)searchString andLatitude:(float)lat andlongitude:(float)lng withinRadius:(float)radius inCategorories:(NSArray*)categories;
 
 @end

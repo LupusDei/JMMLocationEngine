@@ -13,8 +13,8 @@
 #define GooglePlaceSearchURL        @"textsearch/"
 #define GooglePlaceNearbySearchURL  @"nearbysearch/"
 
-//https://maps.googleapis.com/maps/api/place/autocomplete/json?input=%@&sensor=true&key=AIzaSyBPkN4zhGuTqm58_nHVKWWM9MZwYrz09FU
-//https://maps.googleapis.com/maps/api/place/textsearch/json?sensor=true&key=AIzaSyBaBfEINnPjuiQH1rl9Jdq1xV7VM-69ZR0&query="
+//https://maps.googleapis.com/maps/api/place/autocomplete/json?input=%@&sensor=true&key=AddYourOwnKeyHere
+//https://maps.googleapis.com/maps/api/place/textsearch/json?sensor=true&key=AddYourOwnKeyHere&query="
 //https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&sensor=false&key=AddYourOwnKeyHere
 
 
@@ -43,13 +43,13 @@
     return [self buildGooglePlacesURLWithPath:GooglePlaceSearchURL andParams:@{@"query":[NSString stringWithFormat:@"%@",searchString]}];
 }
 
-+(NSString *) buildNearbyPlaceSearchRequestWithSearchString:(NSString*)searchString andLatitude:(float)lat andlongitude:(float)lan withinRadius:(float)radius inCategorories:(NSArray*)categories{
++(NSString *) buildNearbyPlaceSearchRequestWithSearchString:(NSString*)searchString andLatitude:(float)lat andlongitude:(float)lng withinRadius:(float)radius inCategorories:(NSArray*)categories{
     
     searchString = searchString.length > 0 ? searchString : @"";
     searchString = [searchString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setObject:[NSString stringWithFormat:@"%f,%f", lat, lan] forKey:@"location"];
+    [params setObject:[NSString stringWithFormat:@"%f,%f", lat, lng] forKey:@"location"];
     [params setObject:[NSString stringWithFormat:@"%f",radius] forKey:@"radius"];
     if (searchString.length > 0) {
         [params setObject:searchString forKey:@"name"];

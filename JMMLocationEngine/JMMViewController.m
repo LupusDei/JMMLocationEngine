@@ -24,7 +24,7 @@
     self.searchBar.delegate = self;
     [self getLocationPressed:self];
     
-//    [self getNearbyPlaces];
+    [self getNearbyPlaces];
 //    [self searchGooglePlaceWithString:@"Karachi"];
 //    [self AutoCompletePlaceNameWithCharacters:@"Kar"];
     
@@ -93,7 +93,7 @@
 - (void)AutoCompletePlaceNameWithCharacters:(NSString*)chars{
     
     [JMMLocationEngine getGooglePlaceAutoCompleteWithString:chars
-                                                  OnSuccess:^(NSArray *places){
+                                                  onSuccess:^(NSArray *places){
                                                       NSLog(@"%@",places);
                                                   }
                                                   onFailure:^(NSError *error) {
@@ -103,8 +103,8 @@
 }
 
 - (void)searchGooglePlaceWithString:(NSString*)name{
-    [JMMLocationEngine searchGooglePlaceWithString:name
-                                         OnSuccess:^(NSArray *places){
+    [JMMLocationEngine getGooglePlacesWithString:name
+                                         onSuccess:^(NSArray *places){
                                              NSLog(@"%@",places);
                                          }
                                          onFailure:^(NSError *error) {
@@ -114,49 +114,56 @@
 }
 
 - (void)getNearbyPlaces{
-    [JMMLocationEngine getNearbyGooglePlaceInRadius:500
-                                          OnSuccess:^(NSArray *places){
-                                              NSLog(@"%@",places);
-                                          }
-                                          onFailure:^(NSError *error) {
-                                              
-                                          }];
-    
-    [JMMLocationEngine getNearbyGooglePlaceInRadius:500 WithName:@"Apple"
-                                          OnSuccess:^(NSArray *places){
-                                              NSLog(@"%@",places);
-                                          }
-                                          onFailure:^(NSError *error) {
-                                              
-                                          }];
-    
-    
-    [JMMLocationEngine getNearbyGooglePlaceInRadius:500
-                                           WithName:@""
-                                         InCategory:[NSArray arrayWithObjects:kGooglePlacesTypeRestaurant,
-                                                     kGooglePlacesTypeShoppingMall,
-                                                     nil]
-                                          OnSuccess:^(NSArray *places){
-                                              NSLog(@"%@",places);
-                                          }
-                                          onFailure:^(NSError *error) {
-                                              
-                                          }];
-    
-    
-    [JMMLocationEngine getNearbyGooglePlaceInRadius:500
-                                       WithLatitude:37.787357
-                                       andLongitude:-122.408226
-                                           WithName:@""
-                                         InCategory:[NSArray arrayWithObjects:kGooglePlacesTypeRestaurant,
-                                                     kGooglePlacesTypeShoppingMall,
-                                                     nil]
-                                          OnSuccess:^(NSArray *places){
-                                              NSLog(@"%@",places);
-                                          }
-                                          onFailure:^(NSError *error) {
-                                              
-                                          }];
+    [JMMLocationEngine getGooglePlacesNearbyOnSuccess:^(NSArray *places) {
+        JMMGooglePlace *place = places[0];
+        NSLog(@"Place addr:%@   lat:%f   lng:%f   name:%@", place.address, place.coordinate.latitude, place.coordinate.longitude, place.name);
+        
+    } onFailure:^(NSError *error) {
+        
+    }];
+//    [JMMLocationEngine getNearbyGooglePlacesInRadius:500
+//                                          onSuccess:^(NSArray *places){
+//                                              NSLog(@"%@",places);
+//                                          }
+//                                          onFailure:^(NSError *error) {
+//                                              
+//                                          }];
+//    
+//    [JMMLocationEngine getNearbyGooglePlacesInRadius:500 withName:@"Apple"
+//                                          onSuccess:^(NSArray *places){
+//                                              NSLog(@"%@",places);
+//                                          }
+//                                          onFailure:^(NSError *error) {
+//                                              
+//                                          }];
+//    
+//    
+//    [JMMLocationEngine getNearbyGooglePlacesInRadius:500
+//                                           withName:@""
+//                                         inCategory:[NSArray arrayWithObjects:kGooglePlacesTypeRestaurant,
+//                                                     kGooglePlacesTypeShoppingMall,
+//                                                     nil]
+//                                          onSuccess:^(NSArray *places){
+//                                              NSLog(@"%@",places);
+//                                          }
+//                                          onFailure:^(NSError *error) {
+//                                              
+//                                          }];
+//    
+//    
+//    [JMMLocationEngine getNearbyGooglePlacesInRadius:500
+//                                       withLat:37.787357
+//                                       lng:-122.408226
+//                                           name:@""
+//                                         inCategory:[NSArray arrayWithObjects:kGooglePlacesTypeRestaurant,
+//                                                     kGooglePlacesTypeShoppingMall,
+//                                                     nil]
+//                                          onSuccess:^(NSArray *places){
+//                                              NSLog(@"%@",places);
+//                                          }
+//                                          onFailure:^(NSError *error) {
+//                                              
+//                                          }];
 }
 
 @end
