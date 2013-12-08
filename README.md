@@ -58,7 +58,7 @@ Added Google Places API Methods including
                                                   OnSuccess:^(NSArray *places){
                                                       NSLog(@"%@",places);
                                                   }
-                                                  onFailure:^(NSInteger failCode) {
+                                                  onFailure:^(NSError *error) {
         
                                                   }];
                                                   
@@ -72,7 +72,7 @@ Added Google Places API Methods including
                                                   OnSuccess:^(NSArray *places){
                                                       NSLog(@"%@",places);
                                                   }
-                                                  onFailure:^(NSInteger failCode) {
+                                                  onFailure:^(NSError *error) {
                                                       
                                                   }];
 
@@ -85,7 +85,7 @@ Added Google Places API Methods including
                                           OnSuccess:^(NSArray *places){
                                               NSLog(@"%@",places);
                                           }
-                                          onFailure:^(NSInteger failCode) {
+                                          onFailure:^(NSError *error) {
                                               
                                           }];
     
@@ -95,7 +95,7 @@ Added Google Places API Methods including
                                           OnSuccess:^(NSArray *places){
                                               NSLog(@"%@",places);
                                           }
-                                          onFailure:^(NSInteger failCode) {
+                                          onFailure:^(NSError *error) {
                                           }];
                                           
     
@@ -109,7 +109,7 @@ Added Google Places API Methods including
                                           OnSuccess:^(NSArray *places){
                                               NSLog(@"%@",places);
                                           }
-                                          onFailure:^(NSInteger failCode) {
+                                          onFailure:^(NSError *error) {
                                           }];
                                           
                                           
@@ -125,7 +125,7 @@ Added Google Places API Methods including
                                           OnSuccess:^(NSArray *places){
                                               NSLog(@"%@",places);
                                           }
-                                          onFailure:^(NSInteger failCode) {
+                                          onFailure:^(NSError *error) {
                                               
                                           }];
 
