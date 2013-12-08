@@ -130,6 +130,138 @@ static JMMLocationEngine *currentEngineInstance = nil;
 	[self getFoursquareVenuesNearbyWithSearchString:@"" onSuccess:successBlock onFailure:failureBlock];
 }
 
++(void) getGooglePlaceAutoCompleteWithString:(NSString*)typedChars OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock{
+    
+    NSString *url = [O16GooglePlacesAPIHelper buildPlaceAutoCompleteWithTypedCharacter:typedChars];
+    
+    dispatch_queue_t fsQueue = dispatch_queue_create("GoogleAutoCompleteQueue", nil);
+    dispatch_async(fsQueue, ^{
+        NSError *error;
+        NSData *result = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        NSDictionary *jsonResp;
+        if (result) {
+            jsonResp = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:&error];
+        }
+        else {
+            error = [NSError errorWithDomain:@"com.jmm.JMMLocationEngine" code:1 userInfo:@{@"error":@"Empty response"}];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                if (failureBlock)
+                failureBlock(error);
+            }
+            else {
+                if (successBlock)
+                    successBlock([jsonResp objectForKey:@"predictions"]);
+            }
+        });
+    });
+}
+
++(void) searchGooglePlaceWithString:(NSString*)searchQuery OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock{
+    
+    NSString *url = [O16GooglePlacesAPIHelper buildPlaceSearchRequestWithSearchString:searchQuery];
+    
+    dispatch_queue_t fsQueue = dispatch_queue_create("GooglePlacesSearchQueue", nil);
+    dispatch_async(fsQueue, ^{
+        NSError *error;
+        NSData *result = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        NSDictionary *jsonResp;
+        if (result) {
+            jsonResp = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:&error];
+        }
+        else {
+            error = [NSError errorWithDomain:@"com.jmm.JMMLocationEngine" code:1 userInfo:@{@"error":@"Empty response"}];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                if (failureBlock)
+                    failureBlock(error);
+            }
+            else {
+                if (successBlock)
+                    successBlock([jsonResp objectForKey:@"results"]);
+            }
+        });
+    });
+}
+
++(void) getNearbyGooglePlaceInRadius:(float)radius WithLatitude:(float)lat andLongitude:(float)lng WithName:(NSString*)name InCategory:(NSArray*)categories OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock{
+    
+    NSString *url = [O16GooglePlacesAPIHelper buildNearbyPlaceSearchRequestWithSearchString:name
+                                                                                andLatitude:lat
+                                                                               andlongitude:lng
+                                                                               withinRadius:radius
+                                                                             inCategorories:categories];
+    
+    dispatch_queue_t fsQueue = dispatch_queue_create("GooglePlacesNearBySearchQueue", nil);
+    dispatch_async(fsQueue, ^{
+        NSError *error;
+        NSData *result = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        NSDictionary *jsonResp;
+        if (result) {
+            jsonResp = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:&error];
+        }
+        else {
+            error = [NSError errorWithDomain:@"com.jmm.JMMLocationEngine" code:1 userInfo:@{@"error":@"Empty response"}];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                if (failureBlock)
+                failureBlock(error);
+            }
+            else {
+                if (successBlock)
+                    successBlock([jsonResp objectForKey:@"results"]);
+            }
+        });
+    });
+}
+
++(void) getNearbyGooglePlaceInRadius:(float)radius OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock{
+    [self getBallParkLocationOnSuccess:^(CLLocation *loc) {
+        [self getNearbyGooglePlaceInRadius:radius WithLatitude:loc.coordinate.latitude
+                              andLongitude:loc.coordinate.longitude
+                                  WithName:@""
+                                InCategory:nil
+                                 OnSuccess:successBlock
+                                 onFailure:failureBlock];
+        
+    } onFailure:^(NSInteger failCode) {
+        
+    }];
+}
+
++(void) getNearbyGooglePlaceInRadius:(float)radius WithName:(NSString*)name OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock{
+    [self getBallParkLocationOnSuccess:^(CLLocation *loc) {
+        [self getNearbyGooglePlaceInRadius:radius WithLatitude:loc.coordinate.latitude
+                              andLongitude:loc.coordinate.longitude
+                                  WithName:name
+                                InCategory:nil
+                                 OnSuccess:successBlock
+                                 onFailure:failureBlock];
+    } onFailure:^(NSInteger failCode) {
+        
+    }];
+}
+
++(void) getNearbyGooglePlaceInRadius:(float)radius WithName:(NSString*)name InCategory:(NSArray*)categories OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock{
+    
+    [self getBallParkLocationOnSuccess:^(CLLocation *loc) {
+        [self getNearbyGooglePlaceInRadius:radius WithLatitude:loc.coordinate.latitude
+                              andLongitude:loc.coordinate.longitude
+                                  WithName:name
+                                InCategory:categories
+                                 OnSuccess:successBlock
+                                 onFailure:failureBlock];
+    } onFailure:^(NSInteger failCode) {
+        
+    }];
+}
+
 -(void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     switch (status) {
         case kCLAuthorizationStatusAuthorized:
