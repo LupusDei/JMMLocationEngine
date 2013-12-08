@@ -5,6 +5,8 @@ iOS Location, Four Square Engine and Google Place Engine
 
 Original authtor : https://github.com/LupusDei/JMMLocationEngine
 
+Whats New : Goolge Place Search,AutoComplete and NearbyPlaces
+
 - To get user Location
 
   Example : 
@@ -19,11 +21,11 @@ Original authtor : https://github.com/LupusDei/JMMLocationEngine
 
   Example : 
   
-    [JMMLocationEngine getPlacemarkLocationOnSuccess:^(CLPlacemark *place) {
+      [JMMLocationEngine getPlacemarkLocationOnSuccess:^(CLPlacemark *place) {
         
-    } onFailure:^(NSInteger failCode) {
+      } onFailure:^(NSInteger failCode) {
         
-    }];
+      }];
     
 - FourSquare Nearby Venues
 
