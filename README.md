@@ -3,9 +3,12 @@ JMMLocationEngine
 
 iOS Location, Four Square Engine and Google Place Engine
 
-Original authtor : https://github.com/LupusDei/JMMLocationEngine
-
 Whats New : Goolge Place Search,AutoComplete and NearbyPlaces
+
+<h1> Getting Started </h1>
+
+To use the Foursquare API or the Google API, you will first need to add the client keys. 
+These can be found in the header files for JMMFoursquareAPIHelper and O16GooglePlacesAPIHelper
 
 - To get user Location
 
