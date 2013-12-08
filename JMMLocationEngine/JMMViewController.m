@@ -23,6 +23,11 @@
     self.venues = @[];
     self.searchBar.delegate = self;
     [self getLocationPressed:self];
+    
+//    [self getNearbyPlaces];
+//    [self searchGooglePlaceWithString:@"Karachi"];
+//    [self AutoCompletePlaceNameWithCharacters:@"Kar"];
+    
 }
 - (IBAction)getLocationPressed:(id)sender {
     [JMMLocationEngine getBallParkLocationOnSuccess:^(CLLocation *loc) {
@@ -91,7 +96,7 @@
                                                   OnSuccess:^(NSArray *places){
                                                       NSLog(@"%@",places);
                                                   }
-                                                  onFailure:^(NSInteger failCode) {
+                                                  onFailure:^(NSError *error) {
                                                       
                                                   }];
     
@@ -102,7 +107,7 @@
                                          OnSuccess:^(NSArray *places){
                                              NSLog(@"%@",places);
                                          }
-                                         onFailure:^(NSInteger failCode) {
+                                         onFailure:^(NSError *error) {
                                              
                                          }];
     
@@ -113,7 +118,7 @@
                                           OnSuccess:^(NSArray *places){
                                               NSLog(@"%@",places);
                                           }
-                                          onFailure:^(NSInteger failCode) {
+                                          onFailure:^(NSError *error) {
                                               
                                           }];
     
@@ -121,7 +126,7 @@
                                           OnSuccess:^(NSArray *places){
                                               NSLog(@"%@",places);
                                           }
-                                          onFailure:^(NSInteger failCode) {
+                                          onFailure:^(NSError *error) {
                                               
                                           }];
     
@@ -134,7 +139,7 @@
                                           OnSuccess:^(NSArray *places){
                                               NSLog(@"%@",places);
                                           }
-                                          onFailure:^(NSInteger failCode) {
+                                          onFailure:^(NSError *error) {
                                               
                                           }];
     
@@ -149,7 +154,7 @@
                                           OnSuccess:^(NSArray *places){
                                               NSLog(@"%@",places);
                                           }
-                                          onFailure:^(NSInteger failCode) {
+                                          onFailure:^(NSError *error) {
                                               
                                           }];
 }

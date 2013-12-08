@@ -130,7 +130,7 @@ static JMMLocationEngine *currentEngineInstance = nil;
 	[self getFoursquareVenuesNearbyWithSearchString:@"" onSuccess:successBlock onFailure:failureBlock];
 }
 
-+(void) getGooglePlaceAutoCompleteWithString:(NSString*)typedChars OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock{
++(void) getGooglePlaceAutoCompleteWithString:(NSString*)typedChars OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock{
     
     NSString *url = [O16GooglePlacesAPIHelper buildPlaceAutoCompleteWithTypedCharacter:typedChars];
     
@@ -148,8 +148,8 @@ static JMMLocationEngine *currentEngineInstance = nil;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
-                //                if (failBlock)
-                //                    failBlock(error);
+                if (failureBlock)
+                failureBlock(error);
             }
             else {
                 if (successBlock)
@@ -159,7 +159,7 @@ static JMMLocationEngine *currentEngineInstance = nil;
     });
 }
 
-+(void) searchGooglePlaceWithString:(NSString*)searchQuery OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock{
++(void) searchGooglePlaceWithString:(NSString*)searchQuery OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock{
     
     NSString *url = [O16GooglePlacesAPIHelper buildPlaceSearchRequestWithSearchString:searchQuery];
     
@@ -177,8 +177,8 @@ static JMMLocationEngine *currentEngineInstance = nil;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
-                //                if (failBlock)
-                //                    failBlock(error);
+                if (failureBlock)
+                    failureBlock(error);
             }
             else {
                 if (successBlock)
@@ -188,7 +188,7 @@ static JMMLocationEngine *currentEngineInstance = nil;
     });
 }
 
-+(void) getNearbyGooglePlaceInRadius:(float)radius WithLatitude:(float)lat andLongitude:(float)lng WithName:(NSString*)name InCategory:(NSArray*)categories OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock{
++(void) getNearbyGooglePlaceInRadius:(float)radius WithLatitude:(float)lat andLongitude:(float)lng WithName:(NSString*)name InCategory:(NSArray*)categories OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock{
     
     NSString *url = [O16GooglePlacesAPIHelper buildNearbyPlaceSearchRequestWithSearchString:name
                                                                                 andLatitude:lat
@@ -210,8 +210,8 @@ static JMMLocationEngine *currentEngineInstance = nil;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
-                //                if (failBlock)
-                //                    failBlock(error);
+                if (failureBlock)
+                failureBlock(error);
             }
             else {
                 if (successBlock)
@@ -221,7 +221,7 @@ static JMMLocationEngine *currentEngineInstance = nil;
     });
 }
 
-+(void) getNearbyGooglePlaceInRadius:(float)radius OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock{
++(void) getNearbyGooglePlaceInRadius:(float)radius OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock{
     [self getBallParkLocationOnSuccess:^(CLLocation *loc) {
         [self getNearbyGooglePlaceInRadius:radius WithLatitude:loc.coordinate.latitude
                               andLongitude:loc.coordinate.longitude
@@ -235,7 +235,7 @@ static JMMLocationEngine *currentEngineInstance = nil;
     }];
 }
 
-+(void) getNearbyGooglePlaceInRadius:(float)radius WithName:(NSString*)name OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock{
++(void) getNearbyGooglePlaceInRadius:(float)radius WithName:(NSString*)name OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock{
     [self getBallParkLocationOnSuccess:^(CLLocation *loc) {
         [self getNearbyGooglePlaceInRadius:radius WithLatitude:loc.coordinate.latitude
                               andLongitude:loc.coordinate.longitude
@@ -248,7 +248,7 @@ static JMMLocationEngine *currentEngineInstance = nil;
     }];
 }
 
-+(void) getNearbyGooglePlaceInRadius:(float)radius WithName:(NSString*)name InCategory:(NSArray*)categories OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock{
++(void) getNearbyGooglePlaceInRadius:(float)radius WithName:(NSString*)name InCategory:(NSArray*)categories OnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock{
     
     [self getBallParkLocationOnSuccess:^(CLLocation *loc) {
         [self getNearbyGooglePlaceInRadius:radius WithLatitude:loc.coordinate.latitude
