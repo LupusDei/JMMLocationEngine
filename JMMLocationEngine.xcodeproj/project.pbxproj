@@ -26,6 +26,7 @@
 		6275986C17F4E16F00C952E4 /* JMMFoursquareAPIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6275986917F4E16F00C952E4 /* JMMFoursquareAPIHelper.m */; };
 		6275987217F4E18700C952E4 /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6275986F17F4E18700C952E4 /* FSConverter.m */; };
 		6275987317F4E18700C952E4 /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6275987117F4E18700C952E4 /* FSVenue.m */; };
+		999B5C5718544BC200A3A3AD /* O16GooglePlacesAPIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 999B5C5618544BC200A3A3AD /* O16GooglePlacesAPIHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,9 @@
 		6275987017F4E18700C952E4 /* FSVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVenue.h; sourceTree = "<group>"; };
 		6275987117F4E18700C952E4 /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenue.m; sourceTree = "<group>"; };
 		62D4227E17F655FC003B772D /* exampleFSResp.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = exampleFSResp.strings; sourceTree = "<group>"; };
+		999B5C5518544BC200A3A3AD /* O16GooglePlacesAPIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = O16GooglePlacesAPIHelper.h; sourceTree = "<group>"; };
+		999B5C5618544BC200A3A3AD /* O16GooglePlacesAPIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = O16GooglePlacesAPIHelper.m; sourceTree = "<group>"; };
+		999B5C5818544C8700A3A3AD /* GooglePlacesTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlacesTypes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,9 @@
 				6275987117F4E18700C952E4 /* FSVenue.m */,
 				6275986817F4E16F00C952E4 /* JMMFoursquareAPIHelper.h */,
 				6275986917F4E16F00C952E4 /* JMMFoursquareAPIHelper.m */,
+				999B5C5818544C8700A3A3AD /* GooglePlacesTypes.h */,
+				999B5C5518544BC200A3A3AD /* O16GooglePlacesAPIHelper.h */,
+				999B5C5618544BC200A3A3AD /* O16GooglePlacesAPIHelper.m */,
 				62D4227E17F655FC003B772D /* exampleFSResp.strings */,
 			);
 			path = social;
@@ -294,6 +301,7 @@
 			files = (
 				6275987317F4E18700C952E4 /* FSVenue.m in Sources */,
 				6275987217F4E18700C952E4 /* FSConverter.m in Sources */,
+				999B5C5718544BC200A3A3AD /* O16GooglePlacesAPIHelper.m in Sources */,
 				6275983817F4E14900C952E4 /* main.m in Sources */,
 				6275983C17F4E14900C952E4 /* JMMAppDelegate.m in Sources */,
 				6275986617F4E16500C952E4 /* JMMLocationEngine.m in Sources */,

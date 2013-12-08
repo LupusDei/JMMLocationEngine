@@ -84,4 +84,74 @@
     }];
 }
 
+#pragma mark - Google Places Test Methods
+- (void)AutoCompletePlaceNameWithCharacters:(NSString*)chars{
+    
+    [JMMLocationEngine getGooglePlaceAutoCompleteWithString:chars
+                                                  OnSuccess:^(NSArray *places){
+                                                      NSLog(@"%@",places);
+                                                  }
+                                                  onFailure:^(NSInteger failCode) {
+                                                      
+                                                  }];
+    
+}
+
+- (void)searchGooglePlaceWithString:(NSString*)name{
+    [JMMLocationEngine searchGooglePlaceWithString:name
+                                         OnSuccess:^(NSArray *places){
+                                             NSLog(@"%@",places);
+                                         }
+                                         onFailure:^(NSInteger failCode) {
+                                             
+                                         }];
+    
+}
+
+- (void)getNearbyPlaces{
+    [JMMLocationEngine getNearbyGooglePlaceInRadius:500
+                                          OnSuccess:^(NSArray *places){
+                                              NSLog(@"%@",places);
+                                          }
+                                          onFailure:^(NSInteger failCode) {
+                                              
+                                          }];
+    
+    [JMMLocationEngine getNearbyGooglePlaceInRadius:500 WithName:@"Apple"
+                                          OnSuccess:^(NSArray *places){
+                                              NSLog(@"%@",places);
+                                          }
+                                          onFailure:^(NSInteger failCode) {
+                                              
+                                          }];
+    
+    
+    [JMMLocationEngine getNearbyGooglePlaceInRadius:500
+                                           WithName:@""
+                                         InCategory:[NSArray arrayWithObjects:kGooglePlacesTypeRestaurant,
+                                                     kGooglePlacesTypeShoppingMall,
+                                                     nil]
+                                          OnSuccess:^(NSArray *places){
+                                              NSLog(@"%@",places);
+                                          }
+                                          onFailure:^(NSInteger failCode) {
+                                              
+                                          }];
+    
+    
+    [JMMLocationEngine getNearbyGooglePlaceInRadius:500
+                                       WithLatitude:37.787357
+                                       andLongitude:-122.408226
+                                           WithName:@""
+                                         InCategory:[NSArray arrayWithObjects:kGooglePlacesTypeRestaurant,
+                                                     kGooglePlacesTypeShoppingMall,
+                                                     nil]
+                                          OnSuccess:^(NSArray *places){
+                                              NSLog(@"%@",places);
+                                          }
+                                          onFailure:^(NSInteger failCode) {
+                                              
+                                          }];
+}
+
 @end
