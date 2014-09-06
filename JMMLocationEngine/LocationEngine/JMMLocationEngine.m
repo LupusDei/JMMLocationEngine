@@ -46,12 +46,13 @@ static JMMLocationEngine *currentEngineInstance = nil;
         le.failureBlock = failureBlock;
         [le scheduleTimeout];
         
-        //for ios8 , dont forget to add NSLocationAlwaysUsageDescription in your info.plist, otherwise it will not work
+	//for ios8 , dont forget to add NSLocationAlwaysUsageDescription in your info.plist, otherwise it will not work
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
         if([le.locator respondsToSelector:@selector(requestAlwaysAuthorization)])
         {
             [le.locator requestAlwaysAuthorization];
         };
-        
+#endif
         
         [le.locator startUpdatingLocation];
     }
