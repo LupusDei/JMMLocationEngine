@@ -13,10 +13,12 @@
 #define UNACCEPTABLE_ACCURACY_IN_METERS 2000
 #define LOCATION_REQUEST_TIMEOUT 5
 #define DEFAULT_GOOGLE_SEARCH_RADIUS 500 //In meters
+#define MAX_MONITORABLE_REGIONS 20
 
 @implementation JMMLocationEngine
 BOOL _timerIsValid;
 static JMMLocationEngine *currentEngineInstance = nil;
+int regionsBeingMonitored = 0;
 
 + (JMMLocationEngine *)current {
     @synchronized(self) {
@@ -39,6 +41,8 @@ static JMMLocationEngine *currentEngineInstance = nil;
     return nil;
 }
 
+#pragma mark iOS Location Services
+
 +(void) getBallParkLocationOnSuccess:(LESuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock {
     if ([CLLocationManager locationServicesEnabled]) {
         JMMLocationEngine *le = [self current];
@@ -46,13 +50,7 @@ static JMMLocationEngine *currentEngineInstance = nil;
         le.failureBlock = failureBlock;
         [le scheduleTimeout];
         
-	//for ios8 , dont forget to add NSLocationAlwaysUsageDescription in your info.plist, otherwise it will not work
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
-        if([le.locator respondsToSelector:@selector(requestAlwaysAuthorization)])
-        {
-            [le.locator requestAlwaysAuthorization];
-        };
-#endif
+        [le requestAlwaysUsage];
         
         [le.locator startUpdatingLocation];
     }
@@ -92,6 +90,8 @@ static JMMLocationEngine *currentEngineInstance = nil;
 //    ZIP = 10175;
 //}
 }
+
+#pragma mark Foursquare Venue Search
 
 +(void) getFoursquareVenuesForLat:(float)lat lng:(float)lng andSearchString:(NSString *)search onSuccess:(void (^)(NSDictionary *venuesInfo))successBlock onFailure:(void (^)(NSError *))failBlock {
     NSString *url = [JMMFoursquareAPIHelper buildVenuesSearchRequestWithLat:lat lng:lng andSearchString:search];
@@ -140,6 +140,8 @@ static JMMLocationEngine *currentEngineInstance = nil;
 +(void) getFoursquareVenuesNearbyOnSuccess:(LEFoursquareSuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock {
 	[self getFoursquareVenuesNearbyWithSearchString:@"" onSuccess:successBlock onFailure:failureBlock];
 }
+
+#pragma mark Google Places Search
 
 +(void) getGooglePlacesNearbyOnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock {
     [self getNearbyGooglePlacesInRadius:DEFAULT_GOOGLE_SEARCH_RADIUS onSuccess:successBlock onFailure:failureBlock];
@@ -282,6 +284,24 @@ static JMMLocationEngine *currentEngineInstance = nil;
     }];
 }
 
+#pragma mark Region Monitoring
+
++(CLCircularRegion *) monitorRegionInRadius:(double)radius aroundLat:(double)lat lng:(double)lng withIdentifier:(NSString *)identifier onEntry:(LERegionEntryExitBlock)entryBlock onExit:(LERegionEntryExitBlock)exitBlock {
+    JMMLocationEngine *le = [self current];
+    le.entryBlock = entryBlock;
+    le.exitBlock = exitBlock;
+    
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(lat, lng);
+    if (radius > le.locator.maximumRegionMonitoringDistance) {
+        radius = le.locator.maximumRegionMonitoringDistance;
+    }
+    CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:coord radius:radius identifier:identifier];
+    
+    [le.locator startMonitoringForRegion:region];
+    regionsBeingMonitored += 1;
+    return region;
+}
+
 -(void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     switch (status) {
         case kCLAuthorizationStatusAuthorized:
@@ -341,6 +361,18 @@ static JMMLocationEngine *currentEngineInstance = nil;
     }
 }
 
+-(void) locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+    if (self.entryBlock) {
+        self.entryBlock(region.identifier);
+    }
+}
+
+-(void) locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
+    if (self.exitBlock) {
+        self.exitBlock(region.identifier);
+    }
+}
+
 -(void) scheduleTimeout {
     [NSTimer scheduledTimerWithTimeInterval:LOCATION_REQUEST_TIMEOUT target:self selector:@selector(timesUp) userInfo:nil repeats:NO];
     _timerIsValid = YES;
@@ -358,5 +390,15 @@ static JMMLocationEngine *currentEngineInstance = nil;
 -(void) stopUpdating {
     [self.locator stopUpdatingLocation];
     _timerIsValid = NO;
+}
+
+-(void) requestAlwaysUsage {
+    //for ios8 , dont forget to add NSLocationAlwaysUsageDescription in your info.plist, otherwise it will not work
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+    if([self.locator respondsToSelector:@selector(requestAlwaysAuthorization)])
+    {
+        [self.locator requestAlwaysAuthorization];
+    };
+#endif
 }
 @end

@@ -30,8 +30,13 @@ typedef void (^LEFoursquareSuccessBlock)(NSArray *venues);
 typedef void (^LEGooglePlacesSuccessBlock)(NSArray *places);
 typedef void (^LEGooglePlacesFailureBlock)(NSError *error);
 
+typedef void (^LERegionEntryExitBlock)(NSString *regionIdentifier);
+
 @property (strong, nonatomic) LESuccessBlock successBlock;
 @property (strong, nonatomic) LEFailureBlock failureBlock;
+@property (strong, nonatomic) LERegionEntryExitBlock entryBlock;
+@property (strong, nonatomic) LERegionEntryExitBlock exitBlock;
+
 
 +(void) getBallParkLocationOnSuccess:(LESuccessBlock)successBlock onFailure:(LEFailureBlock)failureBlock;
 +(void) getPlacemarkLocationOnSuccess:(LEPlacemarkBlock)completionBlock onFailure:(LEFailureBlock)failureBlock;
@@ -42,6 +47,9 @@ typedef void (^LEGooglePlacesFailureBlock)(NSError *error);
 +(void) getGooglePlacesNearbyOnSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
 +(void) getGooglePlacesWithString:(NSString*)searchQuery onSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
 +(void) getGooglePlaceAutoCompleteWithString:(NSString*)typedChars onSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
+
+//New Entry or Exit blocks will apply to all monitored regions.  Differentiate by using the identifier passed through
++(CLCircularRegion *) monitorRegionInRadius:(double)radius aroundLat:(double)lat lng:(double)lng withIdentifier:(NSString *)identifier onEntry:(LERegionEntryExitBlock)entryBlock onExit:(LERegionEntryExitBlock)exitBlock;
 
 /*******  Other Helpers.   Radius is in meters *********/
 +(void) getNearbyGooglePlacesInRadius:(float)radius onSuccess:(LEGooglePlacesSuccessBlock)successBlock onFailure:(LEGooglePlacesFailureBlock)failureBlock;
